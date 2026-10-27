@@ -15,7 +15,7 @@
   <p class="subtitle">PhysioCircuit - a multi-agent LLM framework with explicit, editable physiological mechanisms.</p>
   <div class="authors">Xinru Liang &nbsp;&nbsp; Yongchao Chen<sup>*</sup></div>
   <div class="affil">College of AI, Tsinghua University</div>
-  <div class="links"><a class="pill primary" href="#abstract">Paper</a><a class="pill" href="https://github.com/KatherineG11/physiocircuit">Code</a><a class="pill" href="#benchmark">Benchmark</a><a class="pill" href="#citation">Citation</a></div>
+  <div class="links"><a class="pill primary" href="https://arxiv.org/pdf/2610.33022">Paper</a><a class="pill" href="https://github.com/KatherineG11/physiocircuit">Code</a><a class="pill" href="#benchmark">Benchmark</a><a class="pill" href="#citation">Citation</a></div>
   <div class="hero-image"><img src="assets/case_demo.png" alt="One editable physiological mechanism changes the patient trajectory"></div>
 </header>
 <section id="abstract"><h2 class="section-title">Abstract</h2><p class="abstract">Do language models forecast patient trajectories by reasoning through physiology, or by fitting surface statistics? We introduce <strong>PhysioCircuit</strong>, a multi-agent system that represents each organ as an agent and each physiological relation as an editable mechanism card with direction, lag, and evidence. Its expert-defined graph is frozen at inference, enabling controlled edge interventions. We also introduce <strong>PhysioCircuit-Bench</strong>, a mechanism-controlled benchmark spanning three organ systems, treatment events, and real ICU admissions. We evaluate intervention-direction agreement (IDAR), which requires the affected organ to change in the expected direction within the expected lag window. The expert graph substantially outperforms topology controls on edge-IDAR, including fully connected, random, and reversed graphs. Independent clinician adjudication supports the counterfactual results. PhysioCircuit transfers to new organ systems by configuration alone, without retraining, while preserving inspectable and editable relations.</p></section>
@@ -25,12 +25,14 @@
 
 
 <section id="benchmark"><h2 class="section-title">PhysioCircuit-Bench</h2><p>PhysioCircuit-Bench tests whether a longitudinal forecaster uses the right physiological mechanism, not just whether it predicts the next state. It covers digestive, pneumonia, and cardiovascular-sepsis systems, each with its own organ graph and mechanism cards.</p><p>Each system contains 120 synthetic cases: 20 development cases and 100 blind-test cases. Across the three systems, the benchmark includes 1,440 treatment events and 78 mechanism counterfactual pairs. The evaluation measures organ direction and trajectory prediction, treatment response, and intervention-direction agreement (IDAR), which checks both the direction and timing of a response to a named mechanism edit.</p><p>Real ICU validation is reported separately using an independently obtained MIMIC-IV archive. The public benchmark files are synthetic.</p><p><a class="pill" href="https://github.com/KatherineG11/physiocircuit/tree/main/dataset_pg">Explore the benchmark and protocol</a></p></section>
-<section id="citation"><h2 class="section-title">BibTeX</h2><p>The arXiv identifier will be added when the preprint is available.</p><pre><code>@article{physiocircuit,
-  title   = {Physiology as Topology: Intervenable Organ Graphs for Longitudinal Patient Forecasting},
-  author  = {Liang, Xinru and Chen, Yongchao},
-  journal = {arXiv preprint},
-  year    = {},
-  eprint  = {}
+<section id="citation"><h2 class="section-title">BibTeX</h2><pre><code>@misc{liang2026physiologytopologyintervenableorgan,
+  title={Physiology as Topology: Intervenable Organ Graphs for Longitudinal Patient Forecasting},
+  author={Xinru Liang and Yongchao Chen},
+  year={2026},
+  eprint={2610.33022},
+  archivePrefix={arXiv},
+  primaryClass={q-bio.QM},
+  url={https://arxiv.org/abs/2610.33022},
 }</code></pre></section>
 <footer class="footer">PhysioCircuit | Research artifact | Code under the MIT License</footer>
 </main></body></html>
